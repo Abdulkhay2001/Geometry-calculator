@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/rootFragment">
+
+    <fragment
+        android:id="@+id/rootFragment"
+        android:name="com.abdul.geometrycalc.screens.fragment.RootFragment"
+        android:label="fragment_root"
+        tools:layout="@layout/fragment_root" >
+        <action
+            android:id="@+id/action_rootFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.abdul.geometrycalc.screens.fragment.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <argument
+            android:name="idFigure"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_secondFragment_to_expressionFragment"
+            app:destination="@id/expressionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expressionFragment"
+        android:name="com.abdul.geometrycalc.screens.fragment.ExpressionFragment"
+        android:label="ExpressionFragment" >
+        <argument
+            android:name="idFormula"
+            app:argType="integer" />
+    </fragment>
+</navigation>
